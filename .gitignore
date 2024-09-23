@@ -1,0 +1,9 @@
+*~
+*#
+*aux
+*synctex.gz
+*log
+*out
+images/
+output/
+.venv/
