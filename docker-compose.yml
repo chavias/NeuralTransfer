@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  streamlit-app:
+    image: neuralstyle  # Replace this with the name of your built image if using pre-built image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8501:8501"  # Map port 8051 on your machine to port 8501 in the container
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    volumes:
+      - .:/app 
+    environment:
+      - STREAMLIT_SERVER_PORT=8501  # You can define any environment variables if necessary
+    entrypoint: ["streamlit", "run", "NeuralStyle.py", "--server.port=8501", "--server.address=0.0.0.0"]
+

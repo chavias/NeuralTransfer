@@ -1,0 +1,8 @@
+# Exclude the virtual environment
+.venv/
+
+# Exclude the Git directory
+.git/
+
+# Exclude the .gitignore file itself
+.gitignore
