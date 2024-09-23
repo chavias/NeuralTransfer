@@ -6,3 +6,6 @@
 
 # Exclude the .gitignore file itself
 .gitignore
+
+# Exclude the pychache directory
+__pycache__/
